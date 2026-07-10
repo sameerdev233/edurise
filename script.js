@@ -22,3 +22,15 @@ rows.forEach((row, index) => {
     row.cells[0].innerText = ["🥇","🥈","🥉"][index] || (index + 1);
     table.appendChild(row);
 });
+function login() {
+    const name = document.getElementById("username").value.trim();
+
+    if (name === "") {
+        alert("Apna naam likho");
+        return;
+    }
+
+    localStorage.setItem("playerName", name);
+
+    alert("Welcome " + name + "!");
+}
