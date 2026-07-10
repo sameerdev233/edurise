@@ -36,3 +36,24 @@ h2{
     font-size:28px;
     font-weight:bold;
 }
+nav{
+    background:#007bff;
+    padding:15px;
+    text-align:center;
+}
+
+nav h2{
+    color:white;
+    margin-bottom:10px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:10px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:yellow;
+}
