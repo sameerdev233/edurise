@@ -1,69 +1,211 @@
-ki<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EduRise</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduRise - Learn Smart</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="container">
+<header>
+    <div class="logo">
+        📚 EduRise
+    </div>
 
-<h1>EduRise</h1>
-<p class="tagline">Apni Padhai Ko Banaiye Simple & Effective</p>
+    <div class="login-box">
+        <input type="text" id="studentName" placeholder="Enter your name">
+        <button onclick="login()">Login</button>
+    </div>
+</header>
 
-<input type="text" placeholder="Search Notes...">
 
-<div class="buttons">
-<button>Class 10</button>
-<button>Class 11</button>
-<button>Class 12</button>
+<section class="hero">
+
+    <h1>Learn Better With EduRise</h1>
+
+    <p>
+        Notes, Quiz and Learning Resources for Class 10, 11 and 12 Students.
+    </p>
+
+
+    <div class="search-area">
+        <input 
+        type="text" 
+        id="searchInput" 
+        placeholder="Search notes or subjects..."
+        onkeyup="searchContent()">
+
+        <button>🔍 Search</button>
+    </div>
+
+
+    <button class="start-btn">
+        Start Learning 🚀
+    </button>
+
+</section>
+
+
+
+<section class="classes">
+
+<h2>Select Your Class</h2>
+
+<div class="card-container">
+
+<div class="card" onclick="showClass('Class 10')">
+<h3>Class 10</h3>
+<p>Notes + Quiz</p>
 </div>
 
-<div class="buttons">
-<button>Notes</button>
-<button>Quiz</button>
+
+<div class="card" onclick="showClass('Class 11')">
+<h3>Class 11</h3>
+<p>Notes + Quiz</p>
 </div>
 
-<button class="start">Start Learning</button>
 
-<div class="login">
-<input type="text" placeholder="Enter Name">
-<button>Login</button>
+<div class="card" onclick="showClass('Class 12')">
+<h3>Class 12</h3>
+<p>Notes + Quiz</p>
 </div>
-<div id="quiz">
+
+
+<div class="card" onclick="openNotes()">
+<h3>📖 Notes</h3>
+<p>Subject wise notes</p>
+</div>
+
+
+<div class="card" onclick="openQuiz()">
+<h3>📝 Quiz</h3>
+<p>Test your knowledge</p>
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<section class="content">
+
+<h2 id="welcome">
+Welcome Student
+</h2>
+
+
+<div id="notesSection">
+
+<h2>Available Notes</h2>
+
+<div class="notes">
+
+<div class="note">
+<h3>Mathematics</h3>
+<p>Important formulas and concepts.</p>
+</div>
+
+
+<div class="note">
+<h3>Science</h3>
+<p>Chapter wise study material.</p>
+</div>
+
+
+<div class="note">
+<h3>English</h3>
+<p>Grammar and literature notes.</p>
+</div>
+
+
+</div>
+
+</div>
+
+
+
+<div id="quizSection">
+
 <h2>Quiz</h2>
 
-<p>1. Bihar ki rajdhani kya hai?</p>
+<p id="question">
+Click start quiz to begin.
+</p>
 
-<button onclick="checkAnswer('Patna')">Patna</button>
-<button onclick="checkAnswer('Gaya')">Gaya</button>
-<button onclick="checkAnswer('Muzaffarpur')">Muzaffarpur</button>
+<button onclick="startQuiz()">
+Start Quiz
+</button>
 
-<p id="result"></p>
+<div id="options"></div>
+
 </div>
+
+
+
+<section class="leaderboard">
+
 <h2>🏆 Leaderboard</h2>
 
 <table>
+
+<thead>
 <tr>
+<th>Rank</th>
+<th>Name</th>
+<th>Score</th>
+</tr>
+</thead>
+
+
+<tbody id="leaderboardData">
+
 <tr>
-    <th>Rank</th>
-    <th>Name</th>
-    <th>Points</th>
+<td>🥇</td>
+<td>Rahul</td>
+<td>95</td>
 </tr>
 
-<tbody id="leaderboard"></tbody>
+<tr>
+<td>🥈</td>
+<td>Aman</td>
+<td>88</td>
+</tr>
 
+<tr>
+<td>🥉</td>
+<td>Ravi</td>
+<td>80</td>
+</tr>
+
+
+</tbody>
 
 </table>
 
-</div>
+</section>
+
+
+</section>
+
+
+
+<footer>
+
+<p>
+© 2026 EduRise | Learn Smart, Grow Fast
+</p>
+
+</footer>
+
+
 
 <script src="script.js"></script>
 
 </body>
 </html>
-
 
