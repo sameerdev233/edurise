@@ -6,7 +6,7 @@
   text-align: center;
 }
 
-h1 {
+h1 
   color: #1565c0;
 }
 
@@ -30,4 +30,9 @@ button{
 
 button:hover{
     background:#0056b3;
+}
+h2{
+    color:#333;
+    font-size:28px;
+    font-weight:bold;
 }
