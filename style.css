@@ -13,3 +13,21 @@ h1 {
 p {
   color: #555;
 }
+h2{
+    color:white;
+    font-size:28px;
+}
+
+button{
+    background:#007bff;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    border-radius:8px;
+    margin:10px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#0056b3;
+}
