@@ -1,258 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>EduRise Bihar Board</title>
-
-<link rel="stylesheet" href="style.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduRise - Learn & Rise</title>
+    <!-- Google Fonts & Font Awesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-
-<!-- LOGIN PAGE -->
-
-<div id="authPage">
-
-<div class="logo">
-📚 EduRise
-</div>
-
-<div class="auth-box">
-
-<h2>Create Account</h2>
-
-<input id="signupName" placeholder="Student Name">
-
-<select id="signupClass">
-<option value="">Select Class</option>
-<option>Class 10 Bihar Board</option>
-<option>Class 11 Bihar Board</option>
-<option>Class 12 Bihar Board</option>
-</select>
-
-<button onclick="signup()">
-Create Account
-</button>
-
-
-<hr>
-
-
-<h2>Login</h2>
-
-<input id="loginName" placeholder="Enter Name">
-
-<button onclick="login()">
-Login
-</button>
-
-
-</div>
-
-</div>
-
-
-
-
-<!-- MAIN WEBSITE -->
-
-
-<div id="mainPage" style="display:none;">
-
-
-<header>
-
-<div class="logo">
-📚 EduRise
-</div>
-
-
-<button onclick="openProfile()">
-Profile
-</button>
-
-</header>
-
-
-
-<section class="dashboard">
-
-<h1 id="welcome">
-Welcome Student
-</h1>
-
-
-<div class="stats">
-
-<div>
-🔥
-<p>Daily Streak</p>
-<span id="streak">0</span>
-</div>
-
-
-<div>
-🏆
-<p>Score</p>
-<span id="score">0</span>
-</div>
-
-
-<div>
-🥇
-<p>Rank</p>
-<span id="rank">-</span>
-</div>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-<section class="classes">
-
-
-<h2>Select Class</h2>
-
-
-<div class="cards">
-
-
-<div class="card" onclick="showSubjects('10')">
-Class 10
-<br>
-Bihar Board
-</div>
-
-
-<div class="card" onclick="showSubjects('11')">
-Class 11
-<br>
-Bihar Board
-</div>
-
-
-<div class="card" onclick="showSubjects('12')">
-Class 12
-<br>
-Bihar Board
-</div>
-
-
-</div>
-
-
-</section>
-
-
-
-
-
-
-<section id="subjectPage" style="display:none;">
-
-
-<h2 id="classTitle"></h2>
-
-
-<div id="subjects"></div>
-
-
-</section>
-
-
-
-
-
-
-<section id="studyPage" style="display:none;">
-
-
-<h2 id="subjectTitle"></h2>
-
-
-<button onclick="openNotes()">
-📚 Notes
-</button>
-
-
-<button onclick="openPYQ()">
-📄 PYQ
-</button>
-
-
-<button onclick="openQuestions()">
-⭐ Important Questions
-</button>
-
-
-<button onclick="openQuiz()">
-🎯 Quiz
-</button>
-
-
-</section>
-
-
-
-
-
-
-<section id="contentBox">
-
-</section>
-
-
-
-
-
-
-<section class="leaderboard">
-
-
-<h2>🏆 Leaderboard</h2>
-
-
-<table>
-
-
-<tr>
-<th>Rank</th>
-<th>Name</th>
-<th>Score</th>
-</tr>
-
-
-<tbody id="leaderboard">
-
-</tbody>
-
-
-</table>
-
-
-</section>
-
-
-
-
-</div>
-
-
-
-
-<script src="script.js"></script>
-
-
+    <!-- ==================== NAVBAR ==================== -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>EduRise</span>
+            </div>
+            <div class="nav-actions">
+                <span id="userDisplay" class="user-greeting">Guest</span>
+                <button id="loginBtn" class="btn-login"><i class="fas fa-user"></i> Login</button>
+                <button id="logoutBtn" class="btn-logout" style="display:none;"><i class="fas fa-sign-out-alt"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main class="container">
+
+        <!-- ====== HOME SECTION ====== -->
+        <section id="home-section" class="section active">
+            <div class="hero">
+                <h1>Welcome to <span class="highlight">EduRise</span></h1>
+                <p>Your gateway to smart learning. Explore notes, test your knowledge, and rise to the top!</p>
+                
+                <!-- Search Bar -->
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search for subjects, topics, or notes...">
+                </div>
+
+                <!-- Quick Access Buttons -->
+                <div class="quick-grid">
+                    <button class="btn-class" data-class="10"><i class="fas fa-book-open"></i> Class 10</button>
+                    <button class="btn-class" data-class="11"><i class="fas fa-book-open"></i> Class 11</button>
+                    <button class="btn-class" data-class="12"><i class="fas fa-book-open"></i> Class 12</button>
+                    <button id="notesNavBtn" class="btn-notes"><i class="fas fa-sticky-note"></i> Notes</button>
+                    <button id="quizNavBtn" class="btn-quiz"><i class="fas fa-puzzle-piece"></i> Quiz</button>
+                </div>
+
+                <div class="cta-area">
+                    <button id="startLearningBtn" class="btn-primary btn-large"><i class="fas fa-rocket"></i> Start Learning</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== NOTES SECTION ====== -->
+        <section id="notes-section" class="section">
+            <div class="section-header">
+                <h2><i class="fas fa-sticky-note"></i> Study Notes</h2>
+                <button class="btn-back" onclick="showHome()"><i class="fas fa-arrow-left"></i> Back</button>
+            </div>
+            <div id="notesGrid" class="notes-grid">
+                <!-- Dynamically populated by JS -->
+            </div>
+        </section>
+
+        <!-- ====== QUIZ SECTION ====== -->
+        <section id="quiz-section" class="section">
+            <div class="section-header">
+                <h2><i class="fas fa-puzzle-piece"></i> Knowledge Quiz</h2>
+                <button class="btn-back" onclick="showHome()"><i class="fas fa-arrow-left"></i> Back</button>
+            </div>
+            <div id="quizContainer">
+                <!-- Dynamically populated by JS -->
+            </div>
+        </section>
+
+        <!-- ====== LEADERBOARD SECTION ====== -->
+        <section id="leaderboard-section" class="section">
+            <div class="section-header">
+                <h2><i class="fas fa-trophy"></i> Leaderboard</h2>
+                <button class="btn-back" onclick="showHome()"><i class="fas fa-arrow-left"></i> Back</button>
+            </div>
+            <div id="leaderboardContainer">
+                <!-- Dynamically populated by JS -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ==================== LOGIN MODAL ==================== -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-icon"><i class="fas fa-user-graduate"></i></div>
+            <h3>Welcome to EduRise</h3>
+            <p>Enter your name to start learning</p>
+            <input type="text" id="studentNameInput" placeholder="Your full name" autofocus>
+            <button id="loginSubmitBtn" class="btn-primary">Start Journey <i class="fas fa-arrow-right"></i></button>
+        </div>
+    </div>
+
+    <!-- ==================== SCRIPTS ==================== -->
+    <script src="script.js"></script>
 </body>
 </html>
-<script src="script.js"></script>
