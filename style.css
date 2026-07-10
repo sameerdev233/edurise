@@ -1,98 +1,70 @@
- body {
-  font-family: Arial, sans-serif;
-  background: #f4f7fc;
-  margin: 0;
-  padding: 20px;
-  text-align: center;
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#f4f8ff;
+    text-align:center;
 }
 
-h1 
-  color: #1565c0;
-}
-
-p {
-  color: #555;
-}
-h2{
+header{
+    background:linear-gradient(90deg,#00d084,#ffd43b);
     color:white;
+    padding:20px;
     font-size:28px;
+    font-weight:bold;
+}
+
+.hero{
+    margin:30px auto;
+    width:90%;
+    max-width:700px;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+}
+
+.hero h2{
+    color:#0099ff;
+}
+
+.hero p{
+    color:#555;
+}
+
+input{
+    width:90%;
+    padding:12px;
+    border:2px solid #00c853;
+    border-radius:30px;
+    font-size:16px;
 }
 
 button{
-    background:#007bff;
+    background:linear-gradient(90deg,#00d084,#00a2ff);
     color:white;
     border:none;
-    padding:12px 25px;
-    border-radius:8px;
-    margin:10px;
+    padding:12px 20px;
+    margin:8px;
+    border-radius:30px;
+    font-size:16px;
     cursor:pointer;
 }
 
 button:hover{
-    background:#0056b3;
-}
-h2{
-    color:#333;
-    font-size:28px;
-    font-weight:bold;
-}
-nav{
-    background:#007bff;
-    padding:15px;
-    text-align:center;
+    transform:scale(1.05);
 }
 
-nav h2{
-    color:white;
-    margin-bottom:10px;
+section{
+    width:90%;
+    max-width:700px;
+    margin:30px auto;
+    background:white;
+    padding:20px;
+    border-radius:20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
 }
 
-nav a{
-    color:white;
-    text-decoration:none;
-    margin:10px;
-    font-weight:bold;
+section h2{
+    color:#00a2ff;
 }
-
-nav a:hover{
-    color:yellow;
-}
-body{
-    margin:0;
-    padding:0;
-    font-family:Arial,sans-serif;
-    text-align:center;
-    background:#f4f7ff;
-}
-
-nav{
-    background:#007bff;
-    padding:18px;
-}
-
-nav h2{
-    color:white;
-    font-size:30px;
-}
-
-nav a{
-    color:white;
-    text-decoration:none;
-    margin:12px;
-    font-size:18px;
-}
-
-h1{
-    font-size:42px;
-    color:#007bff;
-}
-
-p{
-    font-size:18px;
-}
-
-button{
-    font-size:18px;
-    padding:12px 25px;
-    margin:8px;
-}
+   
