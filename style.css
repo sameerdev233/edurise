@@ -57,3 +57,42 @@ nav a{
 nav a:hover{
     color:yellow;
 }
+body{
+    margin:0;
+    padding:0;
+    font-family:Arial,sans-serif;
+    text-align:center;
+    background:#f4f7ff;
+}
+
+nav{
+    background:#007bff;
+    padding:18px;
+}
+
+nav h2{
+    color:white;
+    font-size:30px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:12px;
+    font-size:18px;
+}
+
+h1{
+    font-size:42px;
+    color:#007bff;
+}
+
+p{
+    font-size:18px;
+}
+
+button{
+    font-size:18px;
+    padding:12px 25px;
+    margin:8px;
+}
