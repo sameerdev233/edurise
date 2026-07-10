@@ -20,7 +20,7 @@ header{
     background:white;
     padding:30px;
     border-radius:20px;
-    box-shadow:0 5px 20px rgba(0,0,0,.15);
+    box-shadow: hu0 5px 20px rgba(0,0,0,.15);
 }
 
 .hero h2{
@@ -67,4 +67,18 @@ section{
 section h2{
     color:#00a2ff;
 }
-   
+   table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+th,td{
+    padding:12px;
+    border-bottom:1px solid #ddd;
+    text-align:center;
+}
+
+th{
+    background:#0099ff;
+    color:white;
+}
