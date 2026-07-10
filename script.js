@@ -36,7 +36,7 @@ function login() {
 }
 let score = Number(localStorage.getItem("score")) || 0;
 
-function checkAnswer(answer) {
+function checkAnswer(answer) {updateLeaderboard();
 
     if(answer === "Patna"){
         score += 10;
