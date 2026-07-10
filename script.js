@@ -30,8 +30,6 @@ function login() {
         return;
     }
 
-<input type="text" id="username" placeholder="Enter Name">
-<button onclick="login()">Login</button>
     alert("Welcome " + name + "!");
 }
 let score = Number(localStorage.getItem("score")) || 0;
