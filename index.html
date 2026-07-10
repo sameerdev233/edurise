@@ -1,210 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EduRise - Learn Smart</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style.css">
+<title>EduRise Bihar Board</title>
+
+<link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-<header>
-    <div class="logo">
-        📚 EduRise
-    </div>
 
-    <div class="login-box">
-        <input type="text" id="studentName" placeholder="Enter your name">
-        <button onclick="login()">Login</button>
-    </div>
+<!-- LOGIN PAGE -->
+
+<div id="authPage">
+
+<div class="logo">
+📚 EduRise
+</div>
+
+<div class="auth-box">
+
+<h2>Create Account</h2>
+
+<input id="signupName" placeholder="Student Name">
+
+<select id="signupClass">
+<option value="">Select Class</option>
+<option>Class 10 Bihar Board</option>
+<option>Class 11 Bihar Board</option>
+<option>Class 12 Bihar Board</option>
+</select>
+
+<button onclick="signup()">
+Create Account
+</button>
+
+
+<hr>
+
+
+<h2>Login</h2>
+
+<input id="loginName" placeholder="Enter Name">
+
+<button onclick="login()">
+Login
+</button>
+
+
+</div>
+
+</div>
+
+
+
+
+<!-- MAIN WEBSITE -->
+
+
+<div id="mainPage" style="display:none;">
+
+
+<header>
+
+<div class="logo">
+📚 EduRise
+</div>
+
+
+<button onclick="openProfile()">
+Profile
+</button>
+
 </header>
 
 
-<section class="hero">
 
-    <h1>Learn Better With EduRise</h1>
+<section class="dashboard">
 
-    <p>
-        Notes, Quiz and Learning Resources for Class 10, 11 and 12 Students.
-    </p>
-
-
-    <div class="search-area">
-        <input 
-        type="text" 
-        id="searchInput" 
-        placeholder="Search notes or subjects..."
-        onkeyup="searchContent()">
-
-        <button>🔍 Search</button>
-    </div>
+<h1 id="welcome">
+Welcome Student
+</h1>
 
 
-    <button class="start-btn">
-        Start Learning 🚀
-    </button>
+<div class="stats">
+
+<div>
+🔥
+<p>Daily Streak</p>
+<span id="streak">0</span>
+</div>
+
+
+<div>
+🏆
+<p>Score</p>
+<span id="score">0</span>
+</div>
+
+
+<div>
+🥇
+<p>Rank</p>
+<span id="rank">-</span>
+</div>
+
+
+</div>
+
 
 </section>
+
+
 
 
 
 <section class="classes">
 
-<h2>Select Your Class</h2>
 
-<div class="card-container">
+<h2>Select Class</h2>
 
-<div class="card" onclick="showClass('Class 10')">
-<h3>Class 10</h3>
-<p>Notes + Quiz</p>
+
+<div class="cards">
+
+
+<div class="card" onclick="showSubjects('10')">
+Class 10
+<br>
+Bihar Board
 </div>
 
 
-<div class="card" onclick="showClass('Class 11')">
-<h3>Class 11</h3>
-<p>Notes + Quiz</p>
+<div class="card" onclick="showSubjects('11')">
+Class 11
+<br>
+Bihar Board
 </div>
 
 
-<div class="card" onclick="showClass('Class 12')">
-<h3>Class 12</h3>
-<p>Notes + Quiz</p>
-</div>
-
-
-<div class="card" onclick="openNotes()">
-<h3>📖 Notes</h3>
-<p>Subject wise notes</p>
-</div>
-
-
-<div class="card" onclick="openQuiz()">
-<h3>📝 Quiz</h3>
-<p>Test your knowledge</p>
+<div class="card" onclick="showSubjects('12')">
+Class 12
+<br>
+Bihar Board
 </div>
 
 
 </div>
+
 
 </section>
 
 
 
-<section class="content">
-
-<h2 id="welcome">
-Welcome Student
-</h2>
-
-
-<div id="notesSection">
-
-<h2>Available Notes</h2>
-
-<div class="notes">
-
-<div class="note">
-<h3>Mathematics</h3>
-<p>Important formulas and concepts.</p>
-</div>
-
-
-<div class="note">
-<h3>Science</h3>
-<p>Chapter wise study material.</p>
-</div>
-
-
-<div class="note">
-<h3>English</h3>
-<p>Grammar and literature notes.</p>
-</div>
-
-
-</div>
-
-</div>
 
 
 
-<div id="quizSection">
+<section id="subjectPage" style="display:none;">
 
-<h2>Quiz</h2>
 
-<p id="question">
-Click start quiz to begin.
-</p>
+<h2 id="classTitle"></h2>
 
-<button onclick="startQuiz()">
-Start Quiz
+
+<div id="subjects"></div>
+
+
+</section>
+
+
+
+
+
+
+<section id="studyPage" style="display:none;">
+
+
+<h2 id="subjectTitle"></h2>
+
+
+<button onclick="openNotes()">
+📚 Notes
 </button>
 
-<div id="options"></div>
 
-</div>
+<button onclick="openPYQ()">
+📄 PYQ
+</button>
+
+
+<button onclick="openQuestions()">
+⭐ Important Questions
+</button>
+
+
+<button onclick="openQuiz()">
+🎯 Quiz
+</button>
+
+
+</section>
+
+
+
+
+
+
+<section id="contentBox">
+
+</section>
+
+
+
 
 
 
 <section class="leaderboard">
 
+
 <h2>🏆 Leaderboard</h2>
+
 
 <table>
 
-<thead>
+
 <tr>
 <th>Rank</th>
 <th>Name</th>
 <th>Score</th>
 </tr>
-</thead>
 
 
-<tbody id="leaderboardData">
-
-<tr>
-<td>🥇</td>
-<td>Rahul</td>
-<td>95</td>
-</tr>
-
-<tr>
-<td>🥈</td>
-<td>Aman</td>
-<td>88</td>
-</tr>
-
-<tr>
-<td>🥉</td>
-<td>Ravi</td>
-<td>80</td>
-</tr>
-
+<tbody id="leaderboard">
 
 </tbody>
 
+
 </table>
 
-</section>
-
 
 </section>
 
 
 
-<footer>
 
-<p>
-© 2026 EduRise | Learn Smart, Grow Fast
-</p>
+</div>
 
-</footer>
 
 
 
 <script src="script.js"></script>
+
 
 </body>
 </html>
