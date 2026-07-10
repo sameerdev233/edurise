@@ -34,3 +34,18 @@ function login() {
 
     alert("Welcome " + name + "!");
 }
+let score = Number(localStorage.getItem("score")) || 0;
+
+function checkAnswer(answer) {
+
+    if(answer === "Patna"){
+        score += 10;
+        document.getElementById("result").innerHTML =
+        "✅ Correct! Score: " + score;
+    } else {
+        document.getElementById("result").innerHTML =
+        "❌ Wrong Answer";
+    }
+
+    localStorage.setItem("score", score);
+}
