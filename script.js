@@ -10,3 +10,15 @@ function login() {
 
   alert("Welcome " + name);
 }
+const rows = [...document.querySelectorAll("table tr")].slice(1);
+
+rows.sort((a, b) => {
+    return parseInt(b.cells[2].innerText) - parseInt(a.cells[2].innerText);
+});
+
+const table = document.querySelector("table");
+
+rows.forEach((row, index) => {
+    row.cells[0].innerText = ["🥇","🥈","🥉"][index] || (index + 1);
+    table.appendChild(row);
+});
