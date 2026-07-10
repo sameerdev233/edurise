@@ -49,3 +49,43 @@ function checkAnswer(answer) {
 
     localStorage.setItem("score", score);
 }
+function updateLeaderboard() {
+
+    const name = localStorage.getItem("playerName") || "Guest";
+    const score = Number(localStorage.getItem("score")) || 0;
+
+    let players = JSON.parse(localStorage.getItem("players")) || [];
+
+    // Purana record hatao
+    players = players.filter(p => p.name !== name);
+
+    // Naya record add karo
+    players.push({
+        name: name,
+        score: score
+    });
+
+    // Highest score upar
+    players.sort((a, b) => b.score - a.score);
+
+    // Save
+    localStorage.setItem("players", JSON.stringify(players));
+
+    // Table me dikhao
+    const board = document.getElementById("leaderboard");
+    board.innerHTML = "";
+
+    players.forEach((player, index) => {
+        const medal = ["🥇", "🥈", "🥉"][index] || (index + 1);
+
+        board.innerHTML += `
+        <tr>
+            <td>${medal}</td>
+            <td>${player.name}</td>
+            <td>${player.score}</td>
+        </tr>`;
+    });
+}
+
+// Page load par
+updateLeaderboard();
